@@ -1,15 +1,18 @@
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 
-import { ClerkProvider, ClerkLoaded, SignedIn, SignedOut } from "@clerk/clerk-expo";
+import {
+  ClerkProvider,
+  ClerkLoaded,
+  SignedIn,
+  SignedOut,
+} from "@clerk/clerk-expo";
 import { Text } from "react-native";
-import SignInScreen from './../components/SignInScreen'
+import SignInScreen from "./../components/SignInScreen";
 
-import * as SecureStore from 'expo-secure-store';
+import * as SecureStore from "expo-secure-store";
 
 export default function RootLayout() {
-
-
   const tokenCache = {
     async getToken(key) {
       try {
@@ -34,14 +37,10 @@ export default function RootLayout() {
       }
     },
   };
-  
-
-
-
 
   return (
     <ClerkProvider
-    tokenCache={tokenCache}
+      tokenCache={tokenCache}
       publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
       <SignedIn>
@@ -51,10 +50,8 @@ export default function RootLayout() {
       </SignedIn>
 
       <SignedOut>
-        <SignInScreen/>
+        <SignInScreen />
       </SignedOut>
-
-
     </ClerkProvider>
   );
 }
