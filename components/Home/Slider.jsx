@@ -21,7 +21,7 @@ const Slider = () => {
 
   return (
     <View>
-      <Text style={{ fontSize: 20, paddingLeft:20,paddingTop:20,marginBottom:5 }}># Special for you</Text>
+      <Text style={{ fontSize: 20, paddingLeft:20,paddingTop:20,marginBottom:5 ,fontWeight:'bold'}}># Special for you</Text>
       <FlatList
         data={sliderList}
         horizontal={true}
