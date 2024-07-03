@@ -1,11 +1,14 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { FontAwesome } from "@expo/vector-icons";
 import { Colors } from "../../constants/Colors";
+import { useRouter } from "expo-router";
 
 const BusinessListCart = ({ business }) => {
+  const router=useRouter()
   return (
-    <View
+    <TouchableOpacity
+    onPress={()=>router.push('/buisnessdetials/'+business.id)}
       style={{
         padding: 10,
         margin: 10,
@@ -31,7 +34,7 @@ const BusinessListCart = ({ business }) => {
           <Text>4.5</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
