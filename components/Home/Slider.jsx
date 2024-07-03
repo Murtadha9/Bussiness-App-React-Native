@@ -12,7 +12,6 @@ const Slider = () => {
       const q = query(collection(db, "slider"));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        console.log(doc.data());
         setSliderList((prev) => [...prev, doc.data()]);
       });
     };
