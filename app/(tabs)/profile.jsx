@@ -1,12 +1,20 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
+import UserIntro from "../../components/Profile/UserIntro";
+import MenuList from "../../components/Profile/MenuList";
 
 const profile = () => {
   return (
-    <View>
-      <Text>profile</Text>
-    </View>
-  )
-}
+    <View style={{ padding: 20 }}>
+      <Text style={{ fontWeight: "bold", fontSize: 35 }}>profile</Text>
 
-export default profile
+      {/* user intro */}
+      <UserIntro />
+
+      {/* Menu List */}
+      <MenuList />
+    </View>
+  );
+};
+
+export default profile;
