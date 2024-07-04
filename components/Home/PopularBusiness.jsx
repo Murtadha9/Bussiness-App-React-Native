@@ -14,7 +14,7 @@ const PopularBusiness = () => {
       const q = query(collection(db, "BussinessList"), limit(10));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
-        setBusinessList((prev) => [...prev, doc.data()]);
+        setBusinessList((prev) => [...prev, {id:doc.id,...doc.data()}]);
       });
     };
     getBusinessList();

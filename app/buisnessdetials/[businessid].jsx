@@ -1,4 +1,4 @@
-import { View, Text, ActivityIndicator } from "react-native";
+import { View, Text, ActivityIndicator, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useLocalSearchParams } from "expo-router";
 import {
@@ -15,17 +15,19 @@ import Intro from "../../components/BusinesDetails/Intro";
 import ActionButton from "../../components/BusinesDetails/ActionButton";
 import About from "../../components/BusinesDetails/About";
 
+import Reviews from "../../components/BusinesDetails/Reviews";
+
 const BusinessDetials = () => {
   const { businessid } = useLocalSearchParams();
   const [business, setBusiness] = useState([]);
-  const [loaing, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const getBusinessDetialsById = async () => {
     setLoading(true);
     const docRef = doc(db, "BussinessList", businessid);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      setBusiness(docSnap.data());
+      setBusiness({id:docSnap.id , ...docSnap.data()});
       setLoading(false);
     } else {
       console.log("No such document!");
@@ -36,8 +38,9 @@ const BusinessDetials = () => {
     getBusinessDetialsById();
   }, []);
   return (
-    <View>
-      {loaing ? (
+ 
+    <ScrollView>
+      {loading ? (
         <ActivityIndicator
           style={{ marginTop: "60%" }}
           size={"large"}
@@ -54,9 +57,15 @@ const BusinessDetials = () => {
 
           {/* About Section */}
           <About business={business}/>
+
+          {/* Review Section */}
+          <Reviews business={business}/>
+
+
         </View>
       )}
-    </View>
+    </ScrollView>
+
   );
 };
 

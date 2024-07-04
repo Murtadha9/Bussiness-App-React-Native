@@ -1,11 +1,14 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { Colors } from "../../constants/Colors";
 import { FontAwesome } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 const PopBusinessCard = ({ business }) => {
+  const router=useRouter()
   return (
-    <View
+    <TouchableOpacity
+    onPress={()=>router.push('/buisnessdetials/'+business?.id)}
       style={{
         marginLeft: 20,
         padding: 10,
@@ -35,7 +38,7 @@ const PopBusinessCard = ({ business }) => {
 
         <Text style={{backgroundColor:Colors.PRIMIRY, color:'#fff' , padding:3,fontSize:12,borderRadius:5}}>{business.category}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

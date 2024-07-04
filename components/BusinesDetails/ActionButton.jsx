@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, TouchableOpacity, Linking } from "react-native";
+import { View, Text, FlatList, Image, TouchableOpacity, Linking, Share } from "react-native";
 import React from "react";
 
 const ActionButton = ({ business }) => {
@@ -33,6 +33,10 @@ const ActionButton = ({ business }) => {
 
   const onPressHandler=(item)=>{
     if(item.name==="Share"){
+      Share.share({
+        message: business?.name+"\n Address:"+business?.adress+"\n Find More Detials",
+
+      })
         return ;
     }
 

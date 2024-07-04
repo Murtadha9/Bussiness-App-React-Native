@@ -3,11 +3,11 @@ import React from "react";
 
 const About = ({ business }) => {
   return (
-    <View style={{ padding: 10, backgroundColor: "#fff", height: "100%" }}>
-      <ScrollView >
+    <View style={{ padding: 10, backgroundColor: "#fff" }}>
+
         <Text style={{ fontSize: 20, fontWeight: "bold" }}>About</Text>
         <Text style={{ lineHeight: 25 }}>{business?.about}</Text>
-      </ScrollView>
+
     </View>
   );
 };
