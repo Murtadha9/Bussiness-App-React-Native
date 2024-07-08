@@ -2,6 +2,18 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+<img src="https://github.com/Murtadha9/Bussiness-App-React-Native/assets/138989987/7a9ea592-1467-406c-b699-7dfba3dfd3cf" width="400" height="800" style="margin: 30px; padding: 20px;" />
+
+<img src="https://github.com/Murtadha9/Bussiness-App-React-Native/assets/138989987/55c09b70-9948-469b-a76e-d61735fb8465" width="400" height="800" style="margin: 30px; padding: 20px;" />
+
+<img src="https://github.com/Murtadha9/Bussiness-App-React-Native/assets/138989987/e83004c7-e15d-4ac4-95d8-822fc09fa23c" width="400" height="800" style="margin: 30px; padding: 20px;" />
+
+<img src="https://github.com/Murtadha9/Bussiness-App-React-Native/assets/138989987/a22434e1-7dea-45bb-a553-a6e69fb0d245" width="400" height="800" style="margin: 30px; padding: 20px;" />
+
+<img src="https://github.com/Murtadha9/Bussiness-App-React-Native/assets/138989987/f0d82909-bb66-4177-a72f-27ce1be5e9c3" width="400" height="800" style="margin: 30px; padding: 20px;" />
+
+<img src="https://github.com/Murtadha9/Bussiness-App-React-Native/assets/138989987/cbac01a6-68d3-4a6e-b2f0-a15b95e81b34" width="400" height="800" style="margin: 30px; padding: 20px;" />
+
 ## Get started
 
 1. Install dependencies
