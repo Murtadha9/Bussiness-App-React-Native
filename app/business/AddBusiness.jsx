@@ -22,7 +22,7 @@ const AddBusiness = () => {
   const [image, setImage] = useState(null);
   const [categoryList, setCategoryList] = useState([]);
 
-  const {user}=useUser()
+  const { user } = useUser();
   const [name, setName] = useState();
   const [adress, setAdress] = useState();
   const [contact, setContact] = useState();
@@ -34,6 +34,10 @@ const AddBusiness = () => {
     navigation.setOptions({
       headerTitle: "Add New Business",
       headerShown: true,
+      headerStyle:{
+        backgroundColor: Colors.PRIMIRY,
+        color: "#fff"
+    }
     });
 
     getCategoryList();
@@ -73,30 +77,27 @@ const AddBusiness = () => {
         console.log("image uploaded");
       })
       .then((response) => {
-        getDownloadURL(imageRef).then(async(downloadURL) => {
-          console.log(downloadURL);
-          savedBuisness(downloadURL)
+        getDownloadURL(imageRef).then(async (downloadURL) => {
+          savedBuisness(downloadURL);
         });
       });
   };
 
-
   const savedBuisness = async (imageUrl) => {
-   await setDoc(doc(db,"BussinessList",Date.now().toString()),{
-     name: name,
-     adress: adress,
-     contact: contact,
-     website: website,
-     about: about,
-     category: category,
-     //userName:user?.fileName,
-     //userEmail:user?.primaryEmailAddress?.emailAddress,
-     //userImage:user?.imageUrl,
-     imageUrl: imageUrl,
-   })
-   ToastAndroid.show('New Bussiness Added Success', ToastAndroid.LONG)
-    
-  }
+    await setDoc(doc(db, "BussinessList", Date.now().toString()), {
+      name: name,
+      adress: adress,
+      contact: contact,
+      website: website,
+      about: about,
+      category: category,
+      userName:user?.fullName,
+      userEmail:user?.primaryEmailAddress?.emailAddress,
+      userImage:user?.imageUrl,
+      imageUrl: imageUrl,
+    });
+    ToastAndroid.show("New Bussiness Added Success", ToastAndroid.LONG);
+  };
 
   return (
     <ScrollView style={{ padding: 20 }}>
