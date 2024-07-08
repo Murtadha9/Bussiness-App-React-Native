@@ -57,10 +57,10 @@ const MenuList = () => {
     router.push(item.path);
   };
   return (
-    <View style={{ marginTop: 50 }}>
+    <View style={{ marginTop: 20 }}>
       <FlatList
         data={menuList}
-        numColumns={2}
+        //numColumns={2}
         renderItem={({ item, index }) => (
           <TouchableOpacity
             onPress={() => onMenuClick(item)}
@@ -68,6 +68,7 @@ const MenuList = () => {
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
+              justifyContent: "center",
               gap: 10,
               flex: 1,
               padding: 10,
@@ -76,18 +77,19 @@ const MenuList = () => {
               margin: 10,
               borderColor: Colors.PRIMIRY,
               backgroundColor: "#fff",
+         
             }}
             key={index}
           >
-            <Image source={item.icon} style={{ width: 50, height: 50 }} />
-            <Text style={{ fontSize: 16, fontWeight: "semibold", flex: 1 }}>
+            <Image source={item.icon} style={{ width: 50, height: 50}}  />
+            <Text style={{ fontSize: 16, fontWeight: "semibold" }}>
               {item.name}
             </Text>
           </TouchableOpacity>
         )}
       />
 
-      <Text style={{ textAlign: "center", marginTop: 100, color: "gray" }}>
+      <Text style={{ textAlign: "center", marginTop: 10, color: "gray" }}>
         Develope by Moory @2024
       </Text>
     </View>

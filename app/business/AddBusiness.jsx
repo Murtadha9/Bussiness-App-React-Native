@@ -8,7 +8,7 @@ import {
   ToastAndroid,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { useNavigation } from "expo-router";
+import { useNavigation, useRouter } from "expo-router";
 import * as ImagePicker from "expo-image-picker";
 import { Colors } from "../../constants/Colors";
 import RNPickerSelect from "react-native-picker-select";
@@ -29,6 +29,8 @@ const AddBusiness = () => {
   const [website, setWebsite] = useState();
   const [about, setAbout] = useState();
   const [category, setCategory] = useState();
+
+  const router=useRouter()
 
   useEffect(() => {
     navigation.setOptions({
@@ -97,6 +99,7 @@ const AddBusiness = () => {
       imageUrl: imageUrl,
     });
     ToastAndroid.show("New Bussiness Added Success", ToastAndroid.LONG);
+    router.push('/home')
   };
 
   return (
@@ -203,7 +206,7 @@ const AddBusiness = () => {
           }}
         >
           <RNPickerSelect
-            onValueChange={(v) => setCategory(v)}
+            onValueChange={(value) => setCategory(value)}
             items={categoryList}
           />
         </View>

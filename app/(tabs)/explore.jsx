@@ -1,4 +1,4 @@
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, ScrollView } from "react-native";
 import React, { useState } from "react";
 import { Colors } from "./../../constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
@@ -25,7 +25,7 @@ const explore = () => {
   };
 
   return (
-    <View style={{ padding: 20 }}>
+    <ScrollView style={{ padding: 20 }}>
       <Text style={{ fontWeight: "bold", fontSize: 25 }}>Expolre More</Text>
       {/* search bar */}
       <View
@@ -55,7 +55,9 @@ const explore = () => {
 
       {/* business list */}
       <ExploreBusinessList businessList={businessList} />
-    </View>
+
+      <View style={{marginTop:100}}></View>
+    </ScrollView>
   );
 };
 
